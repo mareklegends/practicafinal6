@@ -11,6 +11,11 @@ import java.util.ArrayList;
  *
  * @author alumno
  */
-public class AgenteEspionaje {
+public class AgenteEspionaje extends Agente{
     ArrayList<String> vPisos = new ArrayList();
+
+    public AgenteEspionaje() {
+        super(null, 0, 0, null);
+    }
+    
 }

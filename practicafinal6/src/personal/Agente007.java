@@ -11,7 +11,13 @@ import java.util.ArrayList;
  *
  * @author alumno
  */
-public class Agente007 {
+public class Agente007 extends Agente{
     private int muertes;
       ArrayList<String> vArmas = new ArrayList();
+
+    public Agente007(int muertes, String Nombre, double salario, int edad, String direccion) {
+        super(Nombre, salario, edad, direccion);
+        this.muertes = muertes;
+    }
+      
 }

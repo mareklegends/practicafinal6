@@ -9,12 +9,14 @@ package personal;
  *
  * @author alumno
  */
-public class Jefazo {
+public class Jefazo extends Agente{
     private int añosMandato;
 
-    public Jefazo(int añosMandato) {
+    public Jefazo(int añosMandato, String Nombre, double salario, int edad, String direccion) {
+        super(Nombre, salario, edad, direccion);
         this.añosMandato = añosMandato;
     }
-    
+
+   
     
 }
