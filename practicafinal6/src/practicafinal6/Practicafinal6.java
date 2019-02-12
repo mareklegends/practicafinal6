@@ -34,6 +34,9 @@ public class Practicafinal6 {
                case 1:
                    System.out.println("1- Ver todos los agentes con su información");
                    System.out.println(".--------- .---------- .------");
+                   for (Agente vAgente : vAgentes) {
+                       System.out.println(vAgente);
+                   }
                    break;                   
                case 2:
                    System.out.println("2- Ver los agentes que ganen más de una cantidad X");

@@ -5,11 +5,13 @@
  */
 package personal;
 
+import java.io.Serializable;
+
 /**
  *
  * @author alumno
  */
-public class Agente {
+public class Agente implements Serializable{
     protected String nombre;
     protected double salario;
     protected int edad;
