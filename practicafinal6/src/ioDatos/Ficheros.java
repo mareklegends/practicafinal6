@@ -69,7 +69,7 @@ public class Ficheros {
    
    //guardas los nuevos agentes en el arrylist
     public static void guardarAgente(ArrayList<Agente> vAgentes){
-         File f = new File("ventas.dat");
+         File f = new File("Recursos/agentes.txt");
         FileOutputStream fi = null;
         ObjectOutputStream entrada = null;
 
@@ -84,12 +84,12 @@ public class Ficheros {
         
         if (f.exists()) {
             try {
-                fi = new FileOutputStream(f);
+                fi = new FileOutputStream(f,true);
                 entrada = new ObjectOutputStream(fi);
               
-                    for (int i = 0; i < vAgentes.size(); i++) {
-                       entrada.writeObject(vAgentes.get(i));
-                    }
+                 for (Agente vAgente : vAgentes) {
+                    entrada.writeObject(vAgente);
+                }
               
                 
             } catch (FileNotFoundException ex) {
