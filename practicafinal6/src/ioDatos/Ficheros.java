@@ -4,8 +4,10 @@ import java.io.DataInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -55,18 +57,54 @@ public class Ficheros {
            Logger.getLogger(Ficheros.class.getName()).log(Level.SEVERE, null, ex);
        }finally{
             try {
-                salida.close();
+                if (salida!=null)
+                    salida.close();
             } catch (IOException ex) {
                  System.out.println("Error al cerrar el programa");
             }
-       }
-           
-          
-       
+       } 
         
         return vAgentes;
    }
    
    //guardas los nuevos agentes en el arrylist
-    
+    public static void guardarAgente(ArrayList<Agente> vAgentes){
+         File f = new File("ventas.dat");
+        FileOutputStream fi = null;
+        ObjectOutputStream entrada = null;
+
+        
+        if (!f.exists()) {
+            try {
+                f.createNewFile();
+            } catch (IOException ex) {
+                System.out.println("Error al crear el archivo");
+            }
+        }
+        
+        if (f.exists()) {
+            try {
+                fi = new FileOutputStream(f);
+                entrada = new ObjectOutputStream(fi);
+              
+                    for (int i = 0; i < vAgentes.size(); i++) {
+                       entrada.writeObject(vAgentes.get(i));
+                    }
+              
+                
+            } catch (FileNotFoundException ex) {
+                System.out.println("Error al escribir en el archivo");
+            } catch (IOException ex) {
+                System.out.println("Error al añadir los datos");
+            }finally{
+                try{
+                    entrada.close();
+                } catch (IOException ex) {
+                    System.out.println("Error al cerrar el archivo");
+                }
+            }
+              
+            
+        }
+    }
 }
