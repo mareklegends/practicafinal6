@@ -17,6 +17,13 @@ public class Jefazo extends Agente{
         this.añosMandato = añosMandato;
     }
 
-   
+   public void verInfoJefazo(){
+       System.out.println("********************************"+
+               "\n Nombre: "+super.getNombre()+
+               "\n Edad: "+super.getEdad()+
+               "\n Dirección: "+super.getSalario()+
+               "\n Años de mandato: "+añosMandato+
+               "\n ********************************");
+   }
     
 }
