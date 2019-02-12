@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * @author alumno
  */
 public class Agente007 extends Agente{
-    private int muertes;
+    protected int muertes;
       ArrayList<String> vArmas = new ArrayList();
 
     public Agente007(int muertes, String Nombre, double salario, int edad, String direccion) {

@@ -10,24 +10,24 @@ package personal;
  * @author alumno
  */
 public class Agente {
-    private String Nombre;
-    private double salario;
-    private int edad;
-    private String direccion;
+    protected String nombre;
+    protected double salario;
+    protected int edad;
+    protected String direccion;
 
     public Agente(String Nombre, double salario, int edad, String direccion) {
-        this.Nombre = Nombre;
+        this.nombre = Nombre;
         this.salario = salario;
         this.edad = edad;
         this.direccion = direccion;
     }
 
     public String getNombre() {
-        return Nombre;
+        return nombre;
     }
 
     public void setNombre(String Nombre) {
-        this.Nombre = Nombre;
+        this.nombre = Nombre;
     }
 
     public double getSalario() {

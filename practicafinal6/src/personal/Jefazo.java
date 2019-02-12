@@ -10,7 +10,7 @@ package personal;
  * @author alumno
  */
 public class Jefazo extends Agente{
-    private int añosMandato;
+    protected int añosMandato;
 
     public Jefazo(int añosMandato, String Nombre, double salario, int edad, String direccion) {
         super(Nombre, salario, edad, direccion);
@@ -19,7 +19,7 @@ public class Jefazo extends Agente{
 
    public void verInfoJefazo(){
        System.out.println("********************************"+
-               "\n Nombre: "+super.getNombre()+
+               "\n Nombre: "+nombre+
                "\n Edad: "+super.getEdad()+
                "\n Dirección: "+super.getSalario()+
                "\n Años de mandato: "+añosMandato+

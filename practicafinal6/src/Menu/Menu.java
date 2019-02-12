@@ -14,10 +14,11 @@ import java.util.Scanner;
 public class Menu {
     
     public static int mostrarMenu(){
-        int opc=10;
+        int opc=0;
+            Scanner leer = new Scanner(System.in);
         
-        while(opc>0 || opc<=8){
-            
+        while((opc<1) || (opc>9)){
+              try{
             System.out.println("********************************");
             System.out.println("1- Ver todos los agentes con su información");
             System.out.println("2- Ver los agentes que ganen más de una cantidad X");
@@ -29,11 +30,11 @@ public class Menu {
             System.out.println("8- Salir");
             
             System.out.println("********************************");
-            
-            
-            
-            try{
-                Scanner leer = new Scanner(System.in);
+               System.out.println("¿Dime que quieres hacer?");
+             opc=leer.nextInt();  
+               
+          
+          
             }catch(Exception e){
                 System.out.println("Error al leer la opción");
             }
