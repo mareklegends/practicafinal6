@@ -19,7 +19,7 @@ public class Agente007 extends Agente{
     public Agente007(int muertes, String Nombre, double salario, int edad, String direccion) {
         super(Nombre, salario, edad, direccion);
         this.muertes = muertes;
-        vArmas = Ficheros.leerDatosArmasPisos("armaspisos.txt");
+        vArmas = Ficheros.leerDatosArmasPisos("armas.txt");
     }
       
 }

@@ -8,6 +8,7 @@ package practicafinal6;
 import java.util.ArrayList;
 import java.util.Scanner;
 import personal.Agente;
+import personal.Agente007;
 import personal.Jefazo;
 
 /**
@@ -23,7 +24,8 @@ public class Practicafinal6 {
       
       //Inicializa
       ArrayList<Agente> vAgentes = ioDatos.Ficheros.leerAgentes();
-      ArrayList<String> vPisosArmas = ioDatos.Ficheros.leerDatosArmasPisos("armaspisos.txt");
+      ArrayList<String> vPisos = ioDatos.Ficheros.leerDatosArmasPisos("pisos.txt");
+      ArrayList<String> vArmas = ioDatos.Ficheros.leerDatosArmasPisos("armas.txt");
      
        
       int opc = 9;       
@@ -45,10 +47,33 @@ public class Practicafinal6 {
                case 3:
                    System.out.println("3- Dar de alta un nuevo piso");
                    System.out.println(".--------- .---------- .------");
+                  
+                     System.out.println("Nombre del arma");
+                    
+                    Scanner leerpiso = new Scanner(System.in);
+                    String piso = leerpiso.nextLine();
+                    
+                    vPisos.add(piso);
+                    
+                    ioDatos.Ficheros.guardarDatosArmasPisos(vPisos, "pisos.txt");
+                    
+                   
                    break;
                case 4:
                    System.out.println("4- Dar de alta una nueva arma");
                    System.out.println(".--------- .---------- .------");
+                   
+                    System.out.println("Nombre del arma");
+                    
+                    Scanner leerarma = new Scanner(System.in);
+                    String arma = leerarma.nextLine();
+                    
+                    vArmas.add(arma);
+                    
+                    ioDatos.Ficheros.guardarDatosArmasPisos(vArmas, "armas.txt");
+                    
+                   
+                   
                    break;
                case 5:
                    System.out.println("5- Dar de alta un nuevo agente");
@@ -85,6 +110,7 @@ public class Practicafinal6 {
                                    case 2:
                                        System.out.println("2- Añadir un Agente007");
                                        System.out.println(".--------- .---------- .------");
+                                      // Agente007 a = new Agente007(opc2, arma, sueldojefazo, opc2, direccionjefazo);
                                        break;
                                    case 3:
                                        System.out.println("3- Añadir un AgenteEspionaje");
@@ -100,6 +126,8 @@ public class Practicafinal6 {
                case 6:
                    System.out.println("6- Encriptar toda la información");
                    System.out.println(".--------- .---------- .------");
+                   
+                   
                    break;
                case 7:
                    System.out.println("7- Desencriptar toda la información");

@@ -17,7 +17,7 @@ public class AgenteEspionaje extends Agente{
 
     public AgenteEspionaje(ArrayList<String> vPisos, String nombre, double salario, int edad, String direccion) {
         super(nombre, salario, edad, direccion);
-        this.vPisos = Ficheros.leerDatosArmasPisos("armaspisos.txt");
+        this.vPisos = Ficheros.leerDatosArmasPisos("pisos.txt");
     }
 
   

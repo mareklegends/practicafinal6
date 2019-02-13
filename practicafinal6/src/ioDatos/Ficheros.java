@@ -7,9 +7,11 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.logging.Level;
@@ -140,9 +142,45 @@ public class Ficheros {
              }
         }
          
-         
-         
          return vArmasPisos;
          
     }
+    
+    
+     public static void guardarDatosArmasPisos(ArrayList<String> vArmasPisos, String fichero){
+        File f = null;
+        FileWriter fw = null;
+        PrintWriter escribir = null;
+        
+        f = new File(fichero);
+        
+        if (!f.exists()) {
+            try {
+                f.createNewFile();
+            } catch (IOException ex) {
+                System.out.println("Error al crear el archivo");
+            }
+        }
+        
+        try {
+            fw = new FileWriter(f);
+            escribir = new PrintWriter(fw);
+            
+            for (int i = 0; i < vArmasPisos.size(); i++) {
+                escribir.println(vArmasPisos.get(i));
+            }
+            
+            
+            
+        } catch (IOException ex) {
+            System.out.println("Error al escribir en fichero");
+        }finally{
+            if (escribir != null) {
+                escribir.close();
+            }
+        }
+        
+        
+    }
+    
 }
