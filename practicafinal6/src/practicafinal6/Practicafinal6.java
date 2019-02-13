@@ -25,7 +25,7 @@ public class Practicafinal6 {
       ArrayList<Agente> vAgentes = ioDatos.Ficheros.leerAgentes();
       //ArrayList<String> vPisos = ioDatos.Ficheros.leerPisos();
       //ArrayList<String> vArmas = ioDatos.Ficheros.leerArmas();
-        
+       
       int opc = 9;       
        
         do{
@@ -35,7 +35,7 @@ public class Practicafinal6 {
                    System.out.println("1- Ver todos los agentes con su información");
                    System.out.println(".--------- .---------- .------");
                    for (Agente vAgente : vAgentes) {
-                       System.out.println(vAgente);
+                       System.out.println(vAgente.toString());
                    }
                    break;                   
                case 2:

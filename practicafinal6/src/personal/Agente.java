@@ -5,6 +5,7 @@
  */
 package personal;
 
+import com.sun.org.apache.xml.internal.serializer.ToStream;
 import java.io.Serializable;
 
 /**
@@ -17,12 +18,25 @@ public class Agente implements Serializable{
     protected int edad;
     protected String direccion;
 
-    public Agente(String Nombre, double salario, int edad, String direccion) {
-        this.nombre = Nombre;
+    public Agente(String nombre, double salario, int edad, String direccion) {
+        this.nombre = nombre;
         this.salario = salario;
         this.edad = edad;
         this.direccion = direccion;
     }
+
+    @Override
+    public String toString() {
+        String datos="";
+        
+        datos="Nombre: "+nombre+" Edad: "+edad+" Salario: "+salario+" Dirección: "+direccion+"";
+        
+        return datos;
+    }
+
+
+    
+    
 
     public String getNombre() {
         return nombre;
