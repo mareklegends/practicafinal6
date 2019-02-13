@@ -29,7 +29,7 @@ public class Agente implements Serializable{
     public String toString() {
         String datos="";
         
-        datos="Nombre: "+nombre+" Edad: "+edad+" Salario: "+salario+" Dirección: "+direccion+"";
+        datos="Nombre: "+nombre+" Edad: "+edad+" Salario: "+salario+"€ Dirección: "+direccion+"";
         
         return datos;
     }

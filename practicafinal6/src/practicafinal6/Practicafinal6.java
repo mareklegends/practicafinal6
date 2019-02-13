@@ -23,8 +23,8 @@ public class Practicafinal6 {
       
       //Inicializa
       ArrayList<Agente> vAgentes = ioDatos.Ficheros.leerAgentes();
-      //ArrayList<String> vPisos = ioDatos.Ficheros.leerPisos();
-      //ArrayList<String> vArmas = ioDatos.Ficheros.leerArmas();
+      ArrayList<String> vPisosArmas = ioDatos.Ficheros.leerDatosArmasPisos("armaspisos.txt");
+     
        
       int opc = 9;       
        

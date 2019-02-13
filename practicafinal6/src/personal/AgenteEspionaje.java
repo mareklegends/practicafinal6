@@ -5,6 +5,7 @@
  */
 package personal;
 
+import ioDatos.Ficheros;
 import java.util.ArrayList;
 
 /**
@@ -12,10 +13,13 @@ import java.util.ArrayList;
  * @author alumno
  */
 public class AgenteEspionaje extends Agente{
-    ArrayList<String> vPisos = new ArrayList();
+    ArrayList<String> vPisos;
 
-    public AgenteEspionaje() {
-        super(null, 0, 0, null);
+    public AgenteEspionaje(ArrayList<String> vPisos, String nombre, double salario, int edad, String direccion) {
+        super(nombre, salario, edad, direccion);
+        this.vPisos = Ficheros.leerDatosArmasPisos("armaspisos.txt");
     }
+
+  
     
 }

@@ -1,14 +1,17 @@
 package ioDatos;
 
+import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import personal.Agente;
@@ -106,5 +109,40 @@ public class Ficheros {
               
             
         }
+    }
+    
+    //leer y añadir el array de armas
+    
+    public static ArrayList<String> leerDatosArmasPisos(String f){
+         ArrayList<String> vArmasPisos = new ArrayList();
+        
+         File fic = new File(f);
+          Scanner leer=null;    
+     
+      
+        if (!fic.exists()) {
+             try {
+                 fic.createNewFile();
+             } catch (IOException ex) {
+                 System.out.println("Error al crear el archivo");
+             }
+        }
+          if (fic.exists()) {
+             try {
+                 leer = new Scanner(fic);
+                 
+                  while(leer.hasNext()){
+            String dato = leer.nextLine();
+            vArmasPisos.add(dato);
+            }
+             } catch (FileNotFoundException ex) {
+                 System.out.println("Error al leer el archivo");
+             }
+        }
+         
+         
+         
+         return vArmasPisos;
+         
     }
 }

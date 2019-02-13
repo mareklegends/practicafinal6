@@ -24,7 +24,9 @@ public class Jefazo extends Agente{
         datos="********************************"+
                "\n Nombre: "+nombre+
                "\n Edad: "+edad+
-               "\n Dirección: "+salario+
+               "\n Dirección: "+direccion+
+                "\n Salario: "+salario+"€"+
+                
                "\n Años de mandato: "+añosMandato+
                "\n ********************************";
         
