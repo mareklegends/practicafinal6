@@ -24,8 +24,8 @@ public class Practicafinal6 {
       
       //Inicializa
       ArrayList<Agente> vAgentes = ioDatos.Ficheros.leerAgentes();
-      ArrayList<String> vPisos = ioDatos.Ficheros.leerDatosArmasPisos("pisos.txt");
-      ArrayList<String> vArmas = ioDatos.Ficheros.leerDatosArmasPisos("armas.txt");
+      ArrayList<String> vPisos = ioDatos.Ficheros.leerDatosArmasPisos("Recursos/pisos.txt");
+      ArrayList<String> vArmas = ioDatos.Ficheros.leerDatosArmasPisos("Recursos/armas.txt");
      
        
       int opc = 9;       
@@ -55,7 +55,7 @@ public class Practicafinal6 {
                     
                     vPisos.add(piso);
                     
-                    ioDatos.Ficheros.guardarDatosArmasPisos(vPisos, "pisos.txt");
+                    ioDatos.Ficheros.guardarDatosArmasPisos(vPisos, "Recursos/pisos.txt");
                     
                    
                    break;
@@ -70,7 +70,7 @@ public class Practicafinal6 {
                     
                     vArmas.add(arma);
                     
-                    ioDatos.Ficheros.guardarDatosArmasPisos(vArmas, "armas.txt");
+                    ioDatos.Ficheros.guardarDatosArmasPisos(vArmas, "Recursos/armas.txt");
                     
                    
                    
@@ -126,6 +126,9 @@ public class Practicafinal6 {
                case 6:
                    System.out.println("6- Encriptar toda la información");
                    System.out.println(".--------- .---------- .------");
+                   ioDatos.Ficheros.encriptarArhivos(vAgentes, "Recursos/agentes.txt");
+                   ioDatos.Ficheros.encriptarArhivos(vArmas, "Recursos/armas.txt");
+                   ioDatos.Ficheros.encriptarArhivos(vPisos, "Recursos/pisos.txt");
                    
                    
                    break;

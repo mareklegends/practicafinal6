@@ -182,5 +182,12 @@ public class Ficheros {
         
         
     }
+     
+     
+     //encriptar los archivos
+     
+     public static void encriptarArhivos(ArrayList<String> vEncriptar, String nombre){
+         
+     }
     
 }
