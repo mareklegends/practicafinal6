@@ -126,9 +126,9 @@ public class Practicafinal6 {
                case 6:
                    System.out.println("6- Encriptar toda la información");
                    System.out.println(".--------- .---------- .------");
-                   ioDatos.Ficheros.encriptarArhivos(vAgentes, "Recursos/agentes.txt");
-                   ioDatos.Ficheros.encriptarArhivos(vArmas, "Recursos/armas.txt");
-                   ioDatos.Ficheros.encriptarArhivos(vPisos, "Recursos/pisos.txt");
+                   ioDatos.Ficheros.encriptarArhivos(vAgentes,vArmas,vPisos, "Recursos/cifrado.dat");
+                   //ioDatos.Ficheros.encriptarArhivos(vArmas, "Recursos/armas.txt");
+                   //ioDatos.Ficheros.encriptarArhivos(vPisos, "Recursos/pisos.txt");
                    
                    
                    break;

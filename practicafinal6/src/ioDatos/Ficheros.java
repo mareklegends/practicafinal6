@@ -186,7 +186,10 @@ public class Ficheros {
      
      //encriptar los archivos
      
-     public static void encriptarArhivos(ArrayList<String> vEncriptar, String nombre){
+     public static void encriptarArhivos(ArrayList<Agente> vAgentes,ArrayList<String> vArmas, ArrayList<String> vPisos, String nombre){
+         
+         File f = new File(nombre);
+         f.getParentFile().listFiles();
          
      }
     
