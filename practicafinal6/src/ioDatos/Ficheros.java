@@ -232,5 +232,46 @@ public class Ficheros {
      //encriptar los archivos
     public static void desencriptarArhivos(){
         
+        File f = new File ("Recursos/cifrado.dat");
+        
+        FileInputStream fo;
+        ObjectInputStream leer=null;
+          
+        
+
+        if(!f.exists()){
+              try {
+                   f.getParentFile().mkdirs();
+                  f.createNewFile();
+              } catch (IOException ex) {
+                  System.out.println("Fallo al comprobar el archivo");
+              }
+        }
+        try {
+           fo = new FileInputStream(f);
+           leer=new ObjectInputStream(fo);
+          
+            guardarAgente((ArrayList<Agente>)leer.readObject());
+           guardarDatosArmasPisos((ArrayList<String>)leer.readObject(), "Recursos/armas.txt");
+           guardarDatosArmasPisos((ArrayList<String>)leer.readObject(), "Recursos/pisos.txt");
+          
+           
+           
+        } catch (IOException ex) {
+            System.out.println("No se puede leer en el fichero");
+        } catch (ClassNotFoundException ex) {
+              Logger.getLogger(Ficheros.class.getName()).log(Level.SEVERE, null, ex);
+        }finally{
+            if (leer!=null)
+                try {
+                    leer.close();
+            } catch (IOException ex) {
+                    System.out.println("Fallo ");
+            }
+        }
+        
+       
     }
+    
 }
+

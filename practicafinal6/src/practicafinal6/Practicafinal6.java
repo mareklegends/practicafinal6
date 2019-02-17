@@ -5,6 +5,7 @@
  */
 package practicafinal6;
 
+import ioDatos.Ficheros;
 import java.util.ArrayList;
 import java.util.Scanner;
 import personal.Agente;
@@ -138,13 +139,19 @@ public class Practicafinal6 {
                    System.out.println("6- Encriptar toda la información");
                    System.out.println(".--------- .---------- .------");
                    ioDatos.Ficheros.encriptarArhivos(vAgentes,vArmas,vPisos, "Recursos/cifrado.dat");
-                   
+                    vAgentes=null;
+                    vArmas=null;
+                    vPisos=null;
                    
                    
                    break;
                case 7:
                    System.out.println("7- Desencriptar toda la información");
                    System.out.println(".--------- .---------- .------");
+                      Ficheros.desencriptarArhivos();
+                    vAgentes = ioDatos.Ficheros.leerAgentes();
+                    vArmas = ioDatos.Ficheros.leerDatosArmasPisos("Recursos/armas.txt");
+                    vPisos = ioDatos.Ficheros.leerDatosArmasPisos("Recursos/pisos.txt");
                    break;
                case 8:
                    System.out.println(">>>> Saliendo de la aplicación");
