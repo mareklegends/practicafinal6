@@ -188,9 +188,49 @@ public class Ficheros {
      
      public static void encriptarArhivos(ArrayList<Agente> vAgentes,ArrayList<String> vArmas, ArrayList<String> vPisos, String nombre){
          
-         File f = new File(nombre);
-         f.getParentFile().listFiles();
+         File f = new File(nombre);     
+         
+            
+        FileOutputStream fo=null;
+        ObjectOutputStream encriptar=null;
+
+        File[] files = f.getParentFile().listFiles();
+        for (int i=0; i<files.length;i++){
+            files[i].delete();
+        }
+        
+        
+        if(!f.exists()){
+              try {
+                   f.getParentFile().mkdirs();
+                  f.createNewFile();
+              } catch (IOException ex) {
+                  System.out.println("Fallo al crear el archivo");
+              }
+        }
+        try {
+            fo = new FileOutputStream(f,true);
+            encriptar = new ObjectOutputStream(fo);
+            encriptar.writeObject(vAgentes);
+            encriptar.writeObject(vArmas);
+            encriptar.writeObject(vPisos);
+           
+        } catch (IOException ex) {
+            System.out.println("Error al escribir");
+        }finally{
+            if (encriptar!=null)
+                try {
+                    encriptar.close();
+            } catch (IOException ex) {
+                    System.out.println("Error al cerrar el archivo");
+            }
+        }
          
      }
-    
+     
+     
+     //encriptar los archivos
+    public static void desencriptarArhivos(){
+        
+    }
 }
