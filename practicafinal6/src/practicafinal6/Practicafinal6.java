@@ -43,12 +43,23 @@ public class Practicafinal6 {
                case 2:
                    System.out.println("2- Ver los agentes que ganen más de una cantidad X");
                    System.out.println(".--------- .---------- .------");
+                    System.out.println("Salario minimo a buscar");
+                    Scanner leerdinero = new Scanner(System.in);
+                    int dinero=leerdinero.nextInt();
+                    
+                    for (Agente agentes : vAgentes) {
+                        if (agentes.getSalario()>dinero) {
+                            System.out.println(agentes); 
+                            System.out.println("");
+                        }
+                   }
+                   
                    break;
                case 3:
                    System.out.println("3- Dar de alta un nuevo piso");
                    System.out.println(".--------- .---------- .------");
                   
-                     System.out.println("Nombre del arma");
+                     System.out.println("Nombre del piso");
                     
                     Scanner leerpiso = new Scanner(System.in);
                     String piso = leerpiso.nextLine();
